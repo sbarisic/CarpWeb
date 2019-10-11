@@ -5,8 +5,8 @@ root /home/carp/caddy
 
 index main.html
 
-browse /files
-browse /md
+browse /files templates/browse.html
+browse /md templates/browse.html
 
 errors error.log {
 	404 error_404.html

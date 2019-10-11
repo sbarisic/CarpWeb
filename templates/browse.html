@@ -1,0 +1,85 @@
+﻿<!doctype html>
+
+<html lang="en" id="file_browse_html">
+<head>
+	<meta charset="utf-8">
+	<meta property="og:url" content="https://carp.cf/" />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="https://carp.cf/icon.png" />
+	<meta property="og:title" content="{{html .Name}}" />
+	<meta property="og:description" content="{{html .Name}} Browser" />
+
+	<title>{{html .Name}}</title>
+	<meta name="author" content="Carp">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+	<link rel="stylesheet" type="text/css" href="/style/carp.css" />
+</head>
+
+<body>
+	<div id="file_browser">
+		<h1 id="path_name">{{.Path}}</h1>
+
+		<div id="file_list">
+			<table class="table table-hover table-striped">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col" width="100px"></th>
+						<th scope="col">URL</th>
+						<th scope="col">Name</th>
+						<th scope="col">Size</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					{{if .CanGoUp}}
+					<tr>
+						<td><img src="/icon_folder.png" /></td>
+						<td><a href="..">..</a></td>
+						<td></td>
+						<td>-</td>
+					</tr>
+					{{end}}
+
+					{{range .Items}}
+					{{if .IsDir}}
+
+					<tr>
+						<td><img src="/icon_folder.png" /></td>
+						<td><a href="{{html .URL}}">{{html .Name}}</a></td>
+						<td>{{html .Name}}</td>
+						<td>-</td>
+					</tr>
+
+					{{end}}
+					{{end}}
+
+
+					{{range .Items}}
+					<tr>
+						<td><img src="/icon_file.png" /></td>
+						<td><a href="{{html .URL}}">{{html .Name}}</a></td>
+						<td>{{html .Name}}</td>
+						<td>{{.HumanSize}}</td>
+					</tr>
+					{{end}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<script src="/script/bridge.js"></script>
+	<script src="/script/bridge.meta.js"></script>
+	<script src="/script/newtonsoft.json.js"></script>
+	<script src="/script/CarpWeb.js"></script>
+	<script src="/script/CarpWeb.meta.js"></script>
+</body>
+</html>

@@ -56,6 +56,9 @@
     <Reference Include="Bridge, Version=17.9.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Bridge.Core.17.9.0\lib\net40\Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="Bridge.Html5, Version=17.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Bridge.Html5.17.9.0\lib\net40\Bridge.Html5.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=1.16.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Bridge.Newtonsoft.Json.1.16.0\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -71,13 +74,25 @@
     <Content Include="icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="icon_file.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icon_folder.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="main.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="script\carp.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="style\paper.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="style\carp.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\browse.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="templates\paper.html">
